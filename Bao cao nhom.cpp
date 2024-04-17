@@ -28,23 +28,6 @@ class TaiLieu{
 			giaMuon = TL.giaMuon;
 		}
 		//TaiLieu(const TaiLieu &TL) : maTL(TL.maTL), tenTL(TL.tenTL), giaMuon(TL.giaMuon) {}		
-		friend istream &operator >> (istream &is, TaiLieu &TL){
-			cout <<"nhap ma tai lieu: ";   
-			getline(is, TL.maTL);
-			cout << "\n"<< "nhap ten tai lieu: ";
-			getline(is, TL.tenTL);
-			cout <<"\n"<<"nhap gia muon: ";
-			is >> TL.giaMuon;
-			cin.ignore();
-			return is;
-		}
-		
-		friend ostream &operator << (ostream &os, TaiLieu TL){
-			os << TL.maTL <<"\n";
-			os << TL.tenTL <<"\n";
-			os << TL.giaMuon <<"\n";
-			return os;
-		}
 		
 		//void themTaiLieu();
 		
@@ -74,7 +57,23 @@ class TaiLieu{
 			cout <<"\n"<<"gia muon tai lieu: ";
 			cin >> giaMuon;
 		}
+		friend istream &operator >> (istream &is, TaiLieu &TL){
+			cout <<"nhap ma tai lieu: ";   
+			getline(is, TL.maTL);
+			cout << "\n"<< "nhap ten tai lieu: ";
+			getline(is, TL.tenTL);
+			cout <<"\n"<<"nhap gia muon: ";
+			is >> TL.giaMuon;
+			cin.ignore();
+			return is;
+		}
 		
+		friend ostream &operator << (ostream &os, TaiLieu TL){
+			os << TL.maTL <<"\n";
+			os << TL.tenTL <<"\n";
+			os << TL.giaMuon <<"\n";
+			return os;
+		}
 		~TaiLieu(){
 			cout <<"\n"<<"ham tao da duoc huy \n";
 		}
